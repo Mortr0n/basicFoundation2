@@ -126,5 +126,68 @@ function addSeven(arr){
     return newArr;
 }
 
-var addSevenTest = addSeven([1,2,3,4,5,6,7,8,9,10,-1,-2,-3,-4,-5,-6,-7,-8,-9,-10,0,0,0,0,0,0,0,0,0]);
-console.log("newArr is: " + addSevenTest);
+// var addSevenTest = addSeven([1,2,3,4,5,6,7,8,9,10,-1,-2,-3,-4,-5,-6,-7,-8,-9,-10,0,0,0,0,0,0,0,0,0]);
+// console.log("newArr is: " + addSevenTest);
+
+function reverseArray(arr){
+    var iHold = 0;                      //temporary hold value for after I rewrite the first value
+    for(var i=0; i<arr.length/2; i++){  //Halving where i stops because I'm swapping the beginning and end at the same time.  Once I get to middle I'm done
+        iHold = arr[i];                 //Holding value here
+        arr[i] = arr[arr.length-(i+1)]; //swapping the value with the end or the next end   
+        arr[arr.length-(i+1)] = iHold;  //swapping the progressively smaller value with the hold value
+    }
+    return arr;
+}
+
+// var testReverseArray = reverseArray([1,2,3,4,5,6,7,8,9,10,-1,-2,-3,-4,-5,-6,-7,-8,-9,-10,0,0,0,0,0,0,0,0,0]); //it works with  the 3,1,6,4,2 also
+// console.log(testReverseArray);
+
+function outlookNegative(arr) {
+    var newArr = [];
+    for(var i=0; i<arr.length; i++)
+    if(arr[i]>0){
+        newArr.push(arr[i]*-1);
+    }
+    else{
+        newArr.push(arr[i]);
+    }
+    return newArr;
+}
+
+// var testOutlookNegative = outlookNegative([1,2,3,4,5,6,7,8,9,10,-1,-2,-3,-4,-5,-6,-7,-8,-9,-10,0,0,0,0,0,0,0,0,0]);
+// console.log(testOutlookNegative);
+
+function alwaysHungry(arr){
+        console.log(arr);
+        var foodCount = 0;
+        for(var i=0; i<arr.length; i++){
+            if(arr[i]=="food" || arr[i]=="Food" || arr[i]=="FOOD!"){
+                foodCount++;
+                console.log("yummy");
+            }
+        }
+        if(foodCount==0){
+            console.log("I'm Hungry");
+        }
+    }
+
+// alwaysHungry(["purple", "Test", "Food", "FOOD!", "food", "Animal"]);
+// console.log("Next Array");
+// alwaysHungry(["Green", "blue", "angry", 3,4,-23,100]);
+
+function swapTowardTheCenter(arr){  //this one was hard for me.  I realized after a while I just needed to do the same thing as the swaptowards the middle one except skip over every other one.
+    var indexHold = 0;
+    for(var i=0; i<arr.length/2; i++){
+        indexHold = arr[i];
+        if(i%2==0){
+            arr[i]=arr[arr.length-(1+i)];
+            arr[arr.length-(1+i)]=indexHold;
+        }
+        
+    }
+    return arr;
+}
+var testSwapTowardTheCenter = swapTowardTheCenter([1,2,3,4,5,6]);
+console.log(testSwapTowardTheCenter);
+var newTest = swapTowardTheCenter([1,2,3,4,5,6,7,8,9,10,-1,-2,-3,-4,-5,-6,-7,-8,-9,-10,0,0,0,0,0,0,0,0,0]);
+console.log(newTest);

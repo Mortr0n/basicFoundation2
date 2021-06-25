@@ -67,3 +67,64 @@ function countPositives(arr){
 
 // var testCountPositives = countPositives([-2,3,5,-8,9,0]);
 // console.log(testCountPositives);
+
+
+
+function evensAndOdds(arr){
+    var oddCount = 0;
+    var evenCount = 0;
+    for(var i=0; i<arr.length; i++){
+        if(arr[i]!=0){                     //Added this if to check if it's zero before handling the rest.  Didn't think we wanted to count 0 as even.  Easily removed if we do.
+            if(arr[i]%2==0){
+                evenCount++;
+                if(evenCount%3==0){
+                    console.log("Even more so!");
+                }
+            }
+            if(arr[i]%2!=0){
+                oddCount++;
+                if(oddCount%3==0){
+                    console.log("Thats odd!");
+                }
+            }
+        }
+    }
+}
+
+// evensAndOdds([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,22,22,3,3,3,3,3,3,-2,-2,-2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
+
+function incrementTheSeconds(arr){
+    for(var i=0; i<arr.length; i++){
+        if(i%2!=0){
+            arr[i]++;
+            console.log(arr[i]);
+        }
+    }
+    return arr;
+}
+
+// var incrementTheSecondsTest = incrementTheSeconds([1,2,3,4,5,6,7,8,9,10,-1,-2,-3,-4,-5,-6,-7,-8,-9,-10,0,0,0,0,0,0,0,0,0]);
+// console.log(incrementTheSecondsTest);
+
+function previousLengths(arr){
+    var stringLength = 0;
+    for(var i=arr.length-1; i>0; i--){
+        arr[i]=arr[i-1].length;
+    }
+    return arr;
+}
+
+// var testPreviousLengths = previousLengths(["Hello", "Dojo", "Awesome", "Allmight", "Jiraiya", "Naruto", "Kakashi"]);
+// console.log(testPreviousLengths);
+
+function addSeven(arr){
+    var newArr = [];
+    for(var i=0; i<arr.length; i++){
+        newArr.push(arr[i]+7);
+    }
+    console.log("Arr is: " + arr);
+    return newArr;
+}
+
+var addSevenTest = addSeven([1,2,3,4,5,6,7,8,9,10,-1,-2,-3,-4,-5,-6,-7,-8,-9,-10,0,0,0,0,0,0,0,0,0]);
+console.log("newArr is: " + addSevenTest);

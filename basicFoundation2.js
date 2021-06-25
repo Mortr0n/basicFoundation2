@@ -54,4 +54,16 @@ function doubleVision(arr){
 // console.log(arr)
 // console.log(doubleTest);
 
+function countPositives(arr){
+    var count=0;
+    for(var i=0; i<arr.length; i++){
+        if(arr[i]>0){
+            count++;
+        }
+    }
+    arr[arr.length-1]=count;
+    return arr;
+}
 
+// var testCountPositives = countPositives([-2,3,5,-8,9,0]);
+// console.log(testCountPositives);
